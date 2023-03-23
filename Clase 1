@@ -1,0 +1,61 @@
+---CLASE 1
+--pregunta 1
+select * from stg.product_master
+where categoria = 'Electro'
+
+--pregunta 2
+select * from stg.product_master
+where origen = 'China'
+
+--pregunta 3
+select * from stg.product_master
+where categoria = 'Electro'
+order by nombre asc
+
+--Pregunta 4 
+select * from stg.product_master
+where subcategoria = 'TV' and is_active = 'true'
+
+--Pregunta 5. No hay fecha, lo hice por codigo_producto
+select * from stg.product_master
+where origen = 'Argentina'
+order by codigo_producto asc
+
+--Pregunta 5. Lo hago con otra base de datos
+select * from stg.store_master
+where pais = 'Argentina'
+order by fecha_apertura asc
+
+--Pregunta 6.
+select * from stg.store_master
+order by fecha_apertura desc
+limit 5
+
+--Pregunta 7
+select * from stg.super_store_count
+order by fecha asc
+limit 10
+
+--Pregunta 8
+select * from stg.product_master
+where nombre != 'Soporte TV' and subcategoria != 'Control remoto'
+
+--Pregunta 9 
+select * from stg.order_line_sale
+where venta > 100.000
+
+--Pregunta 10: Opción 1
+select * from stg.order_line_sale
+where fecha between '2022-10-01' and '2022-10-31'
+
+--Pregunta 10: Opción 2
+select * from stg.order_line_sale
+where fecha > '2022-10-01' and fecha < '2022-10-31'
+
+--Pregunta 11: No se donde esta EAN. Lo hago con moneda EUR
+select * from stg.order_line_sale
+where moneda = 'EUR'
+
+--Pregunta 12: 
+select * from stg.order_line_sale
+where fecha > '2022-10-01' and fecha < '2022-11-10'
